@@ -13,7 +13,7 @@ ML Engineer · Open Source Contributor · GSoC 2026 Candidate
 - **[Thermalizer](https://github.com/openclimatefix/graph_weather/pull/166)** — Diffusion-based denoising layer for weather forecasting (merged into OCF)
 - **[LLaMA Task Agent](https://github.com/AswaniSahoo/llama-task-agent)** — Fine-tuned LLaMA-3.1-8B with LoRA for structured tool execution
 - **[Complaint Intelligence](https://github.com/AswaniSahoo/complaint-intelligence-system)** — RAG pipeline over 12M+ documents with FAISS + Gemini ([live app](https://complaint-intelligence-system.streamlit.app/))
-- **[Fairness Credit Risk](https://github.com/AswaniSahoo/fairness-credit-risk)** — Bias detection & mitigation in credit scoring with AI Fairness 360
+- **[Fairness Credit Risk](https://github.com/AswaniSahoo/fairness-credit-risk)** — Bias detection & mitigation in credit scoring with AI Fairness 360([live app](https://huggingface.co/spaces/AswaniSahoo/fairness-credit-risk))
 
 ### Tech
 
