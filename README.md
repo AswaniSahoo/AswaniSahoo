@@ -1,6 +1,6 @@
 ## Hey, I'm Aswani 👋
 
-ML Engineer · Open Source Contributor · GSoC 2026 Candidate
+Ai & ML Engineer · Open Source Contributor · GSoC 2026 Candidate
 
 ---
 
