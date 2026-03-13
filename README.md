@@ -14,7 +14,7 @@ Currently exploring natural-language interfaces for genomic data : [NLP Interfac
 
 - **[MalariaGEN NLP Interface PoC](https://github.com/AswaniSahoo/malariagen-nlp-interface-poc)** : Natural language → `malariagen_data` API translation for querying malaria vector genomic data (10/10 queries resolved, 7 API methods covered)
 - **[Weather Transformer](https://github.com/AswaniSahoo/weather-transformer-scratch)** : Physics-aware Vision Transformer for weather forecasting, built from scratch in PyTorch (74 tests, beats persistence baseline by 27%)
-- **[Biodiversity Publication Analyzer](https://github.com/AswaniSahoo/biodiversity-publication-analyzer)** — NLP pipeline (SciBERT + TF-IDF) to classify biodiversity genomics articles from Europe PMC (81 tests, 99.5% F1)
+- **[Biodiversity Publication Analyzer](https://github.com/AswaniSahoo/biodiversity-publication-analyzer)** : NLP pipeline (SciBERT + TF-IDF) to classify biodiversity genomics articles from Europe PMC (81 tests, 99.5% F1)
 - **[LLaMA Task Agent](https://github.com/AswaniSahoo/llama-task-agent)** : Fine-tuned LLaMA-3.1-8B with LoRA for structured tool execution (100% format compliance)
 - **[Complaint Intelligence](https://github.com/AswaniSahoo/complaint-intelligence-system)** : RAG pipeline with FAISS + Gemini over consumer complaints ([live app](https://complaint-intelligence-system.streamlit.app/))
 - **[Thermalizer (OCF)](https://github.com/openclimatefix/graph_weather/pull/166)** : Diffusion-based denoising layer for autoregressive weather forecasting (merged)
