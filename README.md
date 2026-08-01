@@ -71,7 +71,7 @@ B.Tech @ NIT Rourkela '27 | CGPA 8.02 | Odisha, India
 </a>
 </h4>
 
-- Fitness-window bug fix in the chaos-scenario scoring path
+- Fitness-windows bug fix in the chaos-scenario scoring path
 - Dependency sync across the krkn-ai toolchain
 - Fixed missing `weight` field in network-chaos-ng scenario frontmatters
 
