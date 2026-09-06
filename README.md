@@ -67,11 +67,11 @@ Self-taught ML systems engineer from a non-CS background (Ceramic Engineering): 
 </a>
 </h4>
 
-- Implemented `ThermalizerLayer`: diffusion-based denoising with positional encoding for weather prediction
-- Built variable-resolution H3 mesh builders and dynamic bipartite graph generators
-- Implemented `RegionalForecaster` for movable sub-grid forecasting with `BoundaryNudgingLayer`
-- Published 3-seed ablation study in issue #238; co-credited in `graph_weather` v1.0.132
-- Key PRs: [#166](https://github.com/openclimatefix/graph_weather/pull/166), [#181](https://github.com/openclimatefix/graph_weather/pull/181), [#221](https://github.com/openclimatefix/graph_weather/pull/221), [#239](https://github.com/openclimatefix/graph_weather/pull/239)
+- <strong>Root-Caused Decoder Persistence Collapse:</strong> Traced model failure to discarded encoder features and zero-seeded decoder observation nodes. Shipped zero-parameter skip-connection fix (PR #237, #239), lifting held-out forecasting skill from 4% to <strong>20% over persistence</strong>.
+- <strong>Movable Adaptive Meshing Architecture:</strong> Shipped <code>DynamicGraphBuilder</code>, <code>RegionalForecaster</code>, and <code>BoundaryNudgingLayer</code> for arbitrary runtime sub-grid weather forecasting.
+- <strong>Published Negative Result (Issue #238):</strong> Ran controlled 3-seed held-out ablation proving a 19k-parameter per-node MLP outperformed 2.27M-parameter GNN meshes; detailed scaling and coupling tradeoffs.
+- <strong>Co-credited Contributor:</strong> Formal credit in <code>graph_weather</code> v1.0.132 release (Zenodo DOI).
+- Key PRs: [#166](https://github.com/openclimatefix/graph_weather/pull/166), [#181](https://github.com/openclimatefix/graph_weather/pull/181), [#221](https://github.com/openclimatefix/graph_weather/pull/221), [#237](https://github.com/openclimatefix/graph_weather/pull/237), [#239](https://github.com/openclimatefix/graph_weather/pull/239)
 
 </td>
 <td width="50%" valign="top">
