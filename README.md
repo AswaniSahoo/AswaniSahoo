@@ -123,7 +123,7 @@ Self-taught ML systems engineer from a non-CS background (Ceramic Engineering): 
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="100%" valign="top">
 
 <h4><a href="https://github.com/AswaniSahoo/Incident-evidence-compiler">Incident Evidence Compiler (IEC)</a></h4>
 <p><em>Automated Root Cause Analysis (RCA) on telemetry via deterministic verification graphs and LLM hypothesis generation.</em></p>
@@ -147,7 +147,12 @@ Self-taught ML systems engineer from a non-CS background (Ceramic Engineering): 
 cd Incident-evidence-compiler && pytest  # 304 passing tests</code></pre>
 
 </td>
-<td width="50%" valign="top">
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="100%" valign="top">
 
 <h4><a href="https://github.com/AswaniSahoo/climate-risk-agent">Climate-Risk Agent & MCP Infrastructure</a></h4>
 <p><em>Evaluated 4-node LangGraph risk intelligence system with split-boundary Model Context Protocol (MCP) servers.</em></p>
