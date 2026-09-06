@@ -1,145 +1,94 @@
-<h1 align="center">ASWANI SAHOO</h1>
+<div align="center">
 
-<p align="center">
-  <a href="https://github.com/AswaniSahoo">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=435&height=25&lines=ML+Engineer;Open+Source+Contributor" alt="Typing SVG" />
-  </a>
-</p>
+# Aswani Sahoo
+**ML & AI Systems Engineer** | Agentic Tool Execution · Verifiable Runtimes · Scientific ML  
+**33 merged upstream PRs** across PyTorch (5), ExecuTorch (4), graph_weather (19), krkn-chaos (3), MalariaGEN (2)  
+**PyTorch Docathon 2026 Honorable Mention** (Rank 7 of 33, 17 pts) | **Live MCP Container:** `ghcr.io/aswanisahoo/climate-ipcc-rag-mcp:0.1.0`
 
-<p align="center">
-  <a href="https://github.com/AswaniSahoo"><img src="https://img.shields.io/badge/33_Upstream_Merged_PRs-181717?style=for-the-badge&logo=github&logoColor=white" alt="Merged PRs"/></a>
-  <a href="https://github.com/pytorch"><img src="https://img.shields.io/badge/PyTorch_Org_Member-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/></a>
-  <a href="https://x.com/AswaniSahoo2"><img src="https://img.shields.io/badge/@AswaniSahoo2-000000?style=for-the-badge&logo=x&logoColor=white" alt="Twitter"/></a>
-  <a href="https://linkedin.com/in/aswani-sahoo/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-</p>
+[GitHub](https://github.com/AswaniSahoo) · [LinkedIn](https://linkedin.com/in/aswani-sahoo/) · [Email](mailto:aswanisahoo227@gmail.com) · NIT Rourkela (2023 - 2027, CGPA: 8.02)
+
+</div>
 
 ---
 
-### About
+### Core Systems & Production Artifacts
 
-I build ML systems for science and production: LLM agents with measured evaluation, weather forecasting models, genomics NLP.
+#### 1. [Incident Evidence Compiler (IEC)](https://github.com/AswaniSahoo/Incident-evidence-compiler)
+> **Automated Root Cause Analysis (RCA) on incident telemetry using deterministic graphs and verifier-gated LLMs.**  
+> *Core invariant: An LLM is allowed to propose hypotheses; only deterministic code is allowed to decide.*
 
-Not from a CS background. Taught myself ML, shipped code upstream, earned PyTorch org recognition. Most of what I know came from having patches reviewed by maintainers who did not have to be kind about it.
+- **Verification Gate Architecture:** Hexagonal core with stdlib-only domain behind ports. Hypotheses from Gemini are strictly bounded to an allow-list of observed telemetry signals. A deterministic verifier evaluates content-addressed evidence ledgers and emits only cryptographically backed verdicts: `SUPPORTED`, `REFUTED`, or `UNKNOWN`.
+- **Infrastructure & Concurrency:** Async PostgreSQL worker queue utilizing `FOR UPDATE SKIP LOCKED` for lock-free parallel incident triage; FastAPI control plane with constant-time bearer token auth and tenant scoping; dependency-free Prometheus `/metrics` endpoint tracking stage latency and verdict distributions.
+- **Sealed Benchmark Evaluation (RCAEval Benchmark):**
+  - **Dev Split (RE2-OB, 88 cases):** Baseline Top-1: **0.932** | Top-3: **0.989** | MRR: **0.959**.
+  - **Sealed Held-Out Split (RE2-TT, 90 unseen cases, commit `0a7854e`):** Baseline Top-1: **0.767** | Top-3: **0.878** | MRR: **0.833**.
+  - **Citation Integrity:** **0.0% invalid evidence citations** across both model generations (`gemini-2.5-flash` and `gemini-3.7-flash`). Safely abstained on **52 of 90** held-out cases rather than emit an unverified failure cause.
+- **Test Discipline:** 304 automated tests running with zero network, database, or mock leakage; full `mypy --strict` compliance; Apache-2.0.
 
-B.Tech @ NIT Rourkela '27 | CGPA 8.02 | Odisha, India
-
----
-
-### Open Source: 33 Merged PRs across 5 organizations
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<h4>
-<a href="https://github.com/openclimatefix/graph_weather/pulls?q=is%3Apr+author%3AAswaniSahoo+is%3Aclosed">
-<img src="https://img.shields.io/badge/Open_Climate_Fix-19_merged-2E8B57?style=flat-square&logo=github&logoColor=white" />
-</a>
-</h4>
-
-- Built the **adaptive-mesh regional forecasting** stack end to end: `DynamicGraphBuilder`, `RegionalForecaster`, `BoundaryNudgingLayer`, variable-resolution H3 mesh, stretched-grid dataset and region-weighted loss
-- Root-caused a silent failure where the decoder discarded the encoder's per-observation features, capping the model at the no-change baseline. Skip-connection fix, **zero new parameters**, held-out skill 4% → 20% over persistence
-- Earlier: `ThermalizerLayer` diffusion denoising, NNJA-AI V1 dataset loader
-- Listed as contributor in graph_weather **v1.0.132** (Zenodo DOI)
-
-</td>
-<td width="50%" valign="top">
-
-<h4>
-<a href="https://github.com/pytorch/pytorch/pulls?q=is%3Apr+is%3Aclosed+author%3AAswaniSahoo">
-<img src="https://img.shields.io/badge/PyTorch-5_merged-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-</a>
-<a href="https://github.com/pytorch/executorch/pulls?q=is%3Apr+author%3AAswaniSahoo+is%3Aclosed">
-<img src="https://img.shields.io/badge/ExecuTorch-4_merged-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-</a>
-</h4>
-
-- Docathon 2026: **Honorable Mention** (first-timer category)
-- Migrated 5 core doc files (`nn.functional`, `autograd`, `extending.func`, `mkldnn`, `gradcheck`) from RST to MyST
-- Fixed broken `{include}` paths rendering 3 empty backend pages
-- Documented the CMake build + ctest workflow for C++ tests
-- Added an Inspector API usage example with `print_data_tabular()`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-<h4>
-<a href="https://github.com/krkn-chaos/krkn-ai/pulls?q=is%3Apr+author%3AAswaniSahoo">
-<img src="https://img.shields.io/badge/krkn--chaos_(CNCF)-3_merged-FF6600?style=flat-square&logo=kubernetes&logoColor=white" />
-</a>
-</h4>
-
-- Fitness-windows bug fix in the chaos-scenario scoring path
-- Dependency sync across the krkn-ai toolchain
-- Fixed missing `weight` field in network-chaos-ng scenario frontmatters
-
-</td>
-<td width="50%" valign="top">
-
-<h4>
-<a href="https://github.com/malariagen/malariagen-data-python/pulls?q=is%3Apr+is%3Aclosed+author%3AAswaniSahoo">
-<img src="https://img.shields.io/badge/MalariaGEN-2_merged-1E90FF?style=flat-square&logo=github&logoColor=white" />
-</a>
-</h4>
-
-- Added lower-triangle annotation for Fst heatmaps in the malaria vector genomics library
-- Fixed a CNV data-check indentation bug causing silent failures
-
-</td>
-</tr>
-</table>
-
-<h4>Currently Active</h4>
-
-- [graph_weather #3](https://github.com/openclimatefix/graph_weather/issues/3) / [#238](https://github.com/openclimatefix/graph_weather/issues/238) — adaptive meshing for regional NWP. Currently running a controlled ablation on whether the mesh message-passing earns its parameters against a graph-free baseline; publishing the numbers either way.
-- [krkn-chaos/krkn-ai #389](https://github.com/krkn-chaos/krkn-ai/pull/389) — Elasticsearch config for composite chaos scenarios
-- [malariagen-data-python #1310](https://github.com/malariagen/malariagen-data-python/pull/1310) — haplotype network mixin
+```bash
+# Clone and verify test suite (304 passing tests)
+git clone https://github.com/AswaniSahoo/Incident-evidence-compiler.git
+cd Incident-evidence-compiler && pytest
+```
 
 ---
 
-### Projects
+#### 2. [Climate-Risk Agent & MCP Infrastructure](https://github.com/AswaniSahoo/climate-risk-agent)
+> **Evaluated 4-node LangGraph risk intelligence system with split-boundary Model Context Protocol (MCP) servers.**
 
-| Project | What it does | Highlights |
-|:--------|:------------|:-----------|
-| [Climate-Risk Analyst Agent](https://github.com/AswaniSahoo/climate-risk-agent) — **[live](https://climate-risk-agent-714882950125.us-central1.run.app/)** | LangGraph agent returning typed, cited climate-risk reports — or refusing when the evidence is thin | 105-question SHA-frozen held-out set: recall@3 87%, citation validity 94%, **zero false answers**. 238 tests, ~$0.001/report, deployed on Cloud Run |
-| [Incident Evidence Compiler](https://github.com/AswaniSahoo/Incident-evidence-compiler) | Root-cause investigation service where the model proposes and deterministic code decides | **RCAEval RE2-OB**: top-1 0.932, MRR 0.959. Content-addressed evidence ledger, Postgres `SKIP LOCKED` worker queue, 304 hermetic tests, mypy strict |
-| [Weather Transformer](https://github.com/AswaniSahoo/weather-transformer-scratch) | Physics-aware Transformer for 6-hour weather forecasting on ERA5 | Written from scratch in PyTorch — no `nn.MultiheadAttention`. 74 tests, beats persistence by **27% RMSE** on a 1,316-sample held-out set |
-| [Fairness-Aware Credit Risk](https://github.com/AswaniSahoo/fairness-credit-risk) | Four bias-mitigation interventions measured against a tuned baseline under identical conditions, on two credit datasets | **No intervention helped** — and the reasons differ per dataset. Bootstrap intervals on every metric, **212 tests**, SHAP adverse-action reason codes, model card. Includes a published self-audit of three defects in my own earlier version, including a proxy leak where dropping `gender` did not remove sex from the model. Every published number regenerated from an artifact, enforced by a test |
-| [Complaint Intelligence](https://github.com/AswaniSahoo/complaint-intelligence-system) — **[live](https://complaint-intelligence-system.streamlit.app/)** | RAG and retrieval benchmark over CFPB consumer complaints | **200K CFPB complaints** processed end to end. MiniLM vs BGE, vector vs BM25 vs hybrid vs rerank, KMeans vs BERTopic — every component chosen on measured results, not defaults |
-| [LLaMA Task Agent](https://github.com/AswaniSahoo/llama-task-agent) | LoRA fine-tuned LLaMA-3.1-8B for agentic tool execution | Generates valid function calls with type-safe args from natural language |
-| [Bio Publication Analyzer](https://github.com/AswaniSahoo/biodiversity-publication-analyzer) | SciBERT + TF-IDF classifier for genomics articles | 81 tests, Europe PMC pipeline end to end |
+- **Production Multi-Arch Container:** Published on GitHub Container Registry and indexed on the official Model Context Protocol Registry as `io.github.AswaniSahoo/climate-ipcc-rag`.
+- **Split MCP Security Boundary:** Implemented two distinct MCP servers over `stdio` transport (`mcp==2.0.0`):
+  - `weather-mcp`: Exposes live weather forecast routines and 60+ year ERA5 Generalized Extreme Value (GEV) hazard statistics (stationary and non-stationary models with likelihood-ratio trend tests and 90% bootstrap confidence intervals).
+  - `ipcc-rag-mcp`: Hybrid BM25 and dense Reciprocal Rank Fusion (RRF) retrieval over IPCC AR6 Working Group I & II reports with page-level citation validation.
+- **Protocol Engineering & Sandbox Security:**
+  - Full adherence to `ToolAnnotations`: Explicit `read_only_hint=True` and `open_world_hint=True` with hardcoded coordinate bounding.
+  - Measured client-sandbox credential isolation in MCP Inspector: Identified client environment variable stripping and engineered fallback via non-destructive `load_dotenv(override=False)`.
+- **Empirical Rigor (105-Question SHA-256 Frozen Held-Out Test):**
+  - **Retrieval Performance:** Recall@3: **87.0%** | Recall@5: **91.0%** | Recall@10: **96.2%**.
+  - **Grounding & Guardrails:** **94.0% citation validity**; **0.0% false answers** on refusal confusion matrix.
+  - **Efficiency:** Telemetry recorded at ~$0.001 per grounded report; 238 unit and integration tests.
 
----
-
-### Tech Stack
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=pytorch,python,postgres,docker,linux,git,fastapi,gcp,github,vscode&theme=dark&perline=10" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white" />
-  <img src="https://img.shields.io/badge/HuggingFace_Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
-  <img src="https://img.shields.io/badge/LoRA/PEFT-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/FAISS-0467DF?style=flat-square&logo=meta&logoColor=white" />
-  <img src="https://img.shields.io/badge/xarray-E34F26?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/zarr-2C2255?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/mypy_strict-2A6DB2?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" />
-</p>
+```bash
+# Pull and inspect the production MCP container from GHCR
+docker pull ghcr.io/aswanisahoo/climate-ipcc-rag-mcp:0.1.0
+```
 
 ---
 
-### GitHub Stats
+### Empirical Rigor & Statistical Honesty
 
-<p align="center">
-  <img width="60%" src="https://github-readme-streak-stats.herokuapp.com?user=AswaniSahoo&theme=tokyonight&hide_border=true" />
-</p>
+- **[fairness-credit-risk](https://github.com/AswaniSahoo/fairness-credit-risk):** Evaluated 5 intervention tracks (T0 through T4) across shared seeded splits with 235 unit and integration tests. Published an honest negative finding: no algorithmic intervention improved disparate impact without violating Equal Credit Opportunity Act (ECOA) / Regulation B compliance, and a 1.6B parameter Tabular Foundation Model (TabFM) did not distinguishably outperform a tuned GBDT while incurring approximately 1,000x compute cost.
+- **[weather-transformer-scratch](https://github.com/AswaniSahoo/weather-transformer-scratch):** Physics-aware Vision Transformer built completely from scratch in PyTorch without using `torch.nn.MultiheadAttention`. Implements custom spatial-temporal patch embedding, spherical coordinate encodings, and physics-constrained continuity loss on ERA5 data. Tested via 74 unit tests; achieved a 27% RMSE improvement over the persistence baseline.
 
 ---
 
-<p align="center">
-  <a href="mailto:aswanisahoo227@gmail.com"><img src="https://img.shields.io/badge/aswanisahoo227@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
+### Upstream Open Source Track Record (33 Merged PRs)
+
+| Organization / Repository | Merged | Technical Scope & Production Impact | Verification |
+|:---|:---:|:---|:---|
+| **[PyTorch Core](https://github.com/pytorch/pytorch)** (`pytorch/pytorch`) | **5** | Migrated core documentation to MyST Markdown (`nn.functional`, `autograd`, `extending.func`, `mkldnn`, `gradcheck`). Ranked **#7 of 33** in PyTorch Docathon 2026 (Honorable Mention, designated "First-timer", 17 pts). | [#182925](https://github.com/pytorch/pytorch/pull/182925), [#182626](https://github.com/pytorch/pytorch/pull/182626) |
+| **[PyTorch ExecuTorch](https://github.com/pytorch/executorch)** (`pytorch/executorch`) | **4** | Embedded edge runtime docs and build verification: fixed broken include paths, added Memory Inspector API examples with `print_data_tabular()`, documented manual CMake and `ctest` workflow. | [#19585](https://github.com/pytorch/executorch/pull/19585), [#19386](https://github.com/pytorch/executorch/pull/19386), [#19387](https://github.com/pytorch/executorch/pull/19387) |
+| **[Open Climate Fix](https://github.com/openclimatefix/graph_weather)** (`openclimatefix/graph_weather`) | **19** | Implemented `ThermalizerLayer` diffusion modeling, NNJA-AI V1 dataset loader, variable-resolution H3 mesh generators, dynamic bipartite graph builders, and `RegionalForecaster`. Published controlled 3-seed ablation in issue #238. Co-credited in v1.0.132 release. | [#166](https://github.com/openclimatefix/graph_weather/pull/166), [#171](https://github.com/openclimatefix/graph_weather/pull/171), [#181](https://github.com/openclimatefix/graph_weather/pull/181), [#221](https://github.com/openclimatefix/graph_weather/pull/221) |
+| **[CNCF / krkn-chaos](https://github.com/krkn-chaos/krkn-ai)** (`krkn-chaos/krkn-ai`, `website`) | **3** | Fixed fitness function range-query window covering full test duration, synchronized `uv.lock` with pinned dev dependencies, and resolved scenario frontmatter weight definitions. | [#378](https://github.com/krkn-chaos/krkn-ai/pull/378), [#374](https://github.com/krkn-chaos/krkn-ai/pull/374), [#476](https://github.com/krkn-chaos/website/pull/476) |
+| **[MalariaGEN](https://github.com/malariagen/malariagen-data-python)** (`malariagen/malariagen-data-python`) | **2** | Added lower-triangle pairwise population fixation index ($F_{ST}$) heatmap visualization; resolved CNV data verification indentation defect preventing silent execution errors. | [#969](https://github.com/malariagen/malariagen-data-python/pull/969), [#895](https://github.com/malariagen/malariagen-data-python/pull/895) |
+
+---
+
+### Systems Depth & Technical Skills
+
+| Domain | Core Competencies & Proven Tooling |
+|:---|:---|
+| **Agentic Tooling & Verifiable Runtimes** | Model Context Protocol (MCP, `ToolAnnotations`, MCP Registry), LangGraph state machines, Deterministic Verification Gates, Cryptographic Evidence Ledgers, Pydantic v2 schemas |
+| **Deep Learning & ML Systems** | PyTorch from-scratch tensor primitives, Parameter-Efficient Fine-Tuning (LoRA, QLoRA via PEFT), Vision Transformers, Graph Neural Networks (message passing, bipartite graphs), Hugging Face Transformers |
+| **Distributed Runtimes & Infrastructure** | Async FastAPI, PostgreSQL (`FOR UPDATE SKIP LOCKED` concurrent worker queues), Multi-Arch Docker (GHCR), Dependency-Free Prometheus `/metrics`, GitHub Actions CI/CD, Linux, CMake |
+| **Scientific Computing & Scaled Retrieval** | ERA5 atmospheric reanalysis, GEV extreme value statistical modeling (scipy), xarray, zarr, FAISS vector search, BM25, Reciprocal Rank Fusion (RRF), Cross-Encoder reranking |
+
+---
+
+### Background & Credentials
+
+- **Education:** B.Tech Ceramic Engineering, National Institute of Technology, Rourkela (2023 - 2027) | **CGPA: 8.02**
+- **Certifications:**
+  - Oracle Cloud Infrastructure 2025 Generative AI Professional
+  - Oracle Cloud Infrastructure 2025 Data Science Professional
+  - Oracle Cloud Infrastructure 2025 AI Foundations Associate
