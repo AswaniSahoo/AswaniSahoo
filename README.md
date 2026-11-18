@@ -1,6 +1,6 @@
 **Aswani Kumar Sahoo**. ML / AI engineer building and evaluating LLM agents, RAG and MCP tools. Final-year B.Tech at NIT Rourkela, graduating May 2027.
 
-[Portfolio](https://aswanisahoo.github.io/) · [LinkedIn](https://www.linkedin.com/in/aswani-sahoo/) · [X](https://x.com/AswaniSahoo2) · [Email](mailto:aswanisahoo227@gmail.com)
+**Portfolio: [aswanisahoo.github.io](https://aswanisahoo.github.io/)** · [Résumé (PDF)](https://aswanisahoo.github.io/aswani-kumar-sahoo-resume.pdf) · [LinkedIn](https://www.linkedin.com/in/aswani-sahoo/) · [X](https://x.com/AswaniSahoo2) · [Email](mailto:aswanisahoo227@gmail.com)
 
 #### Selected work
 
@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | [Climate-Risk Agent](https://github.com/AswaniSahoo/climate-risk-agent) ([live](https://climate-risk-agent-714882950125.us-central1.run.app/)) | Five-node LangGraph agent that returns a cited report or refuses. Hybrid retrieval over IPCC AR6, indexed on the official MCP Registry | 0 false answers on a frozen 105-question held-out set |
 | [Incident Evidence Compiler](https://github.com/AswaniSahoo/Incident-evidence-compiler) | LLM proposes root causes, a deterministic verifier decides against a content-addressed evidence ledger | RCAEval top-1 0.767 on 90 sealed held-out cases |
+| [Earthgym](https://github.com/AswaniSahoo/earthgym) | RL environments and evals for weather and climate whose rewards a program can check. Each grader reproduces a published number before it pays a reward | Found 43 ClimaQA (ICLR 2025) test questions word for word in the set the paper fine-tunes on |
 | [Weather Transformer](https://github.com/AswaniSahoo/weather-transformer-scratch) | 4.8M-parameter ViT for weather forecasting, attention written from scratch in PyTorch | Wind error 22% (u10) and 35% (v10) below persistence on the 2020 test year; temperature still trails anomaly persistence. 129 tests |
 | [Complaint analytics](https://github.com/AswaniSahoo/complaint-intelligence-system) | Embedding, clustering and hybrid retrieval compared on CFPB data | 200K complaints |
 
